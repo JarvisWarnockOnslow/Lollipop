@@ -17,6 +17,10 @@ import java.awt.Color;
  * @version (a version number or a date)
  */
 public class Lollipop{
+    public static final double X = 300.0;       // Horizontal center of lollipop
+    public static final double Y = 180.0;       // Verticle center of lollipop
+    public static final double SIZE = 80.0;     // Diameter of lollipop
+    public static final double STICK = 200.0;    // Length of lollipop stick
 
     /**
      * Constructor for objects of class Lollipop 
@@ -29,11 +33,11 @@ public class Lollipop{
 
     /** Draws a red lollipop on a stick */
     private void drawLollipop() {
-        UI.setLineWidth(10);                // Set line width to 10
-        UI.drawLine(300, 200, 300, 400);    // draw line    (300, 200) to (300, 400)
-        UI.setLineWidth(1);                 // Set line width to 1
-        UI.setColor(Color.red);             // Set color to red
-        UI.fillOval(260, 160, 80, 80);      // Fill an oval     @(260, 160), 80x80
+        UI.setLineWidth(SIZE/8.0);                              // Set line width to 10
+        UI.drawLine(X, Y, X, Y + STICK);                        // draw line
+        UI.setLineWidth(1);                                     // Set line width to 1
+        UI.setColor(Color.red);                                 // Set color to red
+        UI.fillOval(X-SIZE/2.0, Y-SIZE/2.0, SIZE, SIZE);        // Fill an oval     @(260, 160), 80x80
     }
 
     /**
